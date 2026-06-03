@@ -2,15 +2,21 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include<string>
+#include<iostream>
+using namespace std;
 
 class Player {
+protected:
 	string name; //연주자 이름
-	int level; //시작할 때 연주자 레벨
-	int currentSongIndex; //현재 연주자 레벨
+	int playerLevel = 0; //연주자 레벨
+	
 public:
-	Player(string name, int level); //연주자 생성
-	void levelUp(); //현재 레벨이 어떠한지 출력
-	string getName(); //getter을 이용해서 name을 받는다.
+	Player(); //여기서 플레이어의 레벨을 기본으로 0으로 준다
+	void inputPlayer(); //플레이어의 이름을 입력받는다
+	void showPlayer(); //플레이어의 정보를 출력한다
+	string getName(); //getter로 플레이어 이름을 받아온다
+	int getPlayerLevel(); //getter로 플레이어의 레벨을 받아온다
+
 };
 
 #endif // !PLAYER_H

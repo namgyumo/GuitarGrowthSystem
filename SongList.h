@@ -1,22 +1,21 @@
 #pragma once
-#ifndef SONG_H
-#define SONG_H
+#ifndef SONGLISTH_H
+#define SONGLISTH_H
 #include <string>
 #include<iostream>
-#include"PostureTip.h"
 using namespace std;
 
-class SongList {
-	string title; // 곡 제목
-	string composer; // 곡 작곡가
-	string difficulty; // 곡 난이도(*로 표시)
-	PostureTip requiredSkills[]; // 곡에 필요한 스킬들
-	static int totalCount; //전체 곡 개수가 몇개인지 세는것
+class SongList{
+	string title = ""; // 곡 제목
 public:
-	static SongList songs[];// 곡을 모두 정의
-	static SongList getSong(int index); 
-	static int getTotalCount(); //곡 개수
-	void printInfo(); //곡에 필요한 정보
+	SongList();
+	SongList(string title); //this를 이용해서 자기자신의 값을 받는다
+	static SongList beginner[2];// 입문곡을 모두 정의
+	static SongList interMediate[2];// 초급곡을 모두 정의
+	static SongList advanced[4];// 중급곡을 모두 정의
+	static SongList expert[2];// 고급곡을 모두 정의
+	void showSongList(); //곡 보여주기
+	string getTitle(); //getter로 곡의 이름을 받는다
 };
 
 #endif // !SONG_H
